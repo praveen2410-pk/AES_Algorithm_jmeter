@@ -4,7 +4,7 @@ This JMeter script includes a preprocessor that encrypts the request body using 
 
 ## Prerequisites
 
-Ensure that you have the Apache Commons Codec library installed in your JMeter setup. You can download it from [https://commons.apache.org/proper/commons-codec/download_codec.cgi](https://commons.apache.org/proper/commons-codec/download_codec.cgi).
+Ensure that you have the Apache Commons Codec library installed in your JMeter setup. You can download it from [https://commons.apache.org/proper/commons-codec/download_codec.cgi](https://commons.apache.org/proper/commons-codec/download_codec.cgi). or download the [lib folder](./lib) copy and paste the Jar files on your jmeter lib folder.
 
 Place the downloaded JAR file in the `lib` directory of your JMeter installation.
 
