@@ -16,7 +16,7 @@ Place the downloaded JAR file in the `lib` directory of your JMeter installation
 
 3. Set the language to `groovy`.
 
-4. Copy and paste the content of the [Preprocessor Script](./JSR223 PreProcessor.groovy) into the script area.
+4. Copy and paste the content of the [Preprocessor Script](./JSR223 PreProcessor.groovy)into the script area.
 
 5. Save your test plan.
 
