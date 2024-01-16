@@ -19,10 +19,10 @@ Place the downloaded JAR file in the `lib` directory of your JMeter installation
 4. Copy and paste the content of the [JSR223 PreProcessor](./JSR223PreProcessor.groovy)into the script area.
 
 5. Save your test plan.
-
+**Note:** Please find the Sample JMX file for refrences.[Jmeter Script](./MM_Encryption_AES.jmx)
 ## Preprocessor Script
 
-The [JSR223 PreProcessor.groovy](./JSR223 PreProcessor.groovy)file contains the Groovy script for the JSR223 PreProcessor. The script performs the following:
+The JSR223 PreProcessor file contains the Groovy script for the JSR223 PreProcessor. The script performs the following:
 
 - Retrieves the channel and other necessary values.
 - Generates the encryption key using the MD5 hash of the channel.
