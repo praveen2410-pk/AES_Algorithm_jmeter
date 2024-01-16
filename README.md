@@ -1,4 +1,4 @@
-# JMeter Request Body Encryption Preprocessor
+# JMeter Request Body Encryption JSR223 PreProcessor
 
 This JMeter script includes a preprocessor that encrypts the request body using AES encryption. The encryption key is generated based on the channel values.
 
