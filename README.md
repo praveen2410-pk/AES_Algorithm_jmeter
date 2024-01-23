@@ -17,7 +17,7 @@ Place the downloaded JAR file in the `lib` directory of your JMeter installation
 3. Set the language to `groovy`.
 
 4. Copy and paste the content of the [JSR223 PreProcessor](./JSR223PreProcessor.groovy)into the script area.
-5. if you want to encrypt the 32,16 bytes of Key and IV 
+5. If have to encrypt the 32,16 bytes of Key and IV [JSR223_PreProcessor](./J)
 
 6. Save your test plan.
 **Note:** Please find the Sample JMX file for reference.[Jmeter Script](./MM_Encryption_AES.jmx)
