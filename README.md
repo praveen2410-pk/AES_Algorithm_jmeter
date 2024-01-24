@@ -4,40 +4,6 @@ AES (Advanced Encryption Standard) serves as a secret code machine, encrypting d
 
 In the request body, before being sent to servers, the request is encrypted using AES in Cipher Block Chaining (CBC) mode. To handle this encryption in JMeter, use the JSR223 Preprocessor with Groovy.
 
-Let's break down the algorithm:
-
-**AES (Advanced Encryption Standard):**
-
-Purpose: AES is a symmetric encryption algorithm designed to secure sensitive data.
-
-Function in the Code: The AES algorithm encrypts the input data.
-
-Key and Initialization Vector: AES operates on a key and an initialization vector (IV). The key is a secret value known only to the parties involved, and the IV is a random or unique value used to ensure that the same plaintext doesn't produce the same ciphertext.
-
-Cipher Modes: The code uses AES in Cipher Block Chaining (CBC) mode. CBC involves chaining the ciphertext of one block with the plaintext of the next block to introduce additional complexity and improve security.
-
-**Cipher (javax.crypto.Cipher):**
-
-Purpose: The Cipher class provides the functionality of a cryptographic cipher for encryption and decryption.
-
-Function in the Code: The Cipher instance is used to perform the encryption operation.
-
-Initialization: The Cipher is initialized with the encryption mode (Cipher.ENCRYPT_MODE), the key, and the initialization vector.
-
-Operation: The doFinal method processes the entire input data and produces the final encrypted output.
-
-Padding: PKCS5 padding is specified in the transformation, indicating that the data will be padded to a multiple of the block size if necessary.
-
-**Base64 Encoding:**
-
-Purpose: Base64 is a binary-to-text encoding scheme representing binary data in an ASCII string format.
-
-Function in the Code: The encrypted byte array produced by AES encryption is converted to a Base64-encoded string.
-
-Encoding: Base64 encoding represents binary data in a printable ASCII format. This step ensures that the encrypted data can be safely transmitted or stored as text without issues related to special characters or binary data.
-
-Remember to update these changes in your GitHub repository.
-
 ## Prerequisites
 
 Ensure that you have the Apache Commons Codec and Ivy library installed in your JMeter setup. You can download it from [Codec Plugin](https://commons.apache.org/proper/commons-codec/download_codec.cgi) and [Ivy Plugin](https://ant.apache.org/ivy/download.cgi.) or download the [lib folder](./lib) copy and paste the Jar files on your jmeter lib folder.
