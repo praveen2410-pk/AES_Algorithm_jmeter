@@ -43,6 +43,23 @@ The JSR223 PreProcessor file contains the Groovy script for the JSR223 PreProces
 - Encrypts the request body using AES.
 - Updates the request body in the sampler's arguments.
 - Sets the checksum in JMeter variables.
+## Encryption Function
+```groovy
+def encryptAES(data, key, initVector) {
+    try {
+        def keyBytes = key.getBytes(StandardCharsets.UTF_8)
+        def ivBytes = initVector.getBytes(StandardCharsets.UTF_8)
+        def keySpec = new SecretKeySpec(keyBytes, "AES")
+        def ivSpec = new IvParameterSpec(ivBytes)
+        def cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING")
+        cipher.init(Cipher.ENCRYPT_MODE, keySpec, ivSpec)
+        def encryptedBytes = cipher.doFinal(data.getBytes(StandardCharsets.UTF_8))
+        return Base64.getEncoder().encodeToString(encryptedBytes)
+    } catch (Exception e) {
+        log.error("Error encrypting data: " + e.getMessage(), e)
+        return null
+    }
+}
 ## Decryption Function
 
 ```groovy
@@ -61,8 +78,7 @@ def decryptAES(encryptedData, key, initVector) {
         return null
     }
 }
-
-  
+'''
 
 ## Configuration
 
