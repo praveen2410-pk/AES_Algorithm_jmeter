@@ -1,4 +1,4 @@
-# AES Cipher Encryption in JMeter using JSR223 PreProcessor with Groovy Language
+# AES Cipher Encryption / Decryption in JMeter using JSR223 PreProcessor with Groovy Language
 
 AES (Advanced Encryption Standard) functions as a secure encryption algorithm, transforming data or messages into ciphertext. This transformation involves the use of a secret key and an initial value (IV). The process ensures that identical messages don't consistently produce the same ciphertext. Once the ciphertext is generated, it is converted into Base64 encoding with padding.
 
