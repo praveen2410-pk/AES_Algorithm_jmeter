@@ -7,12 +7,12 @@ Before being sent to servers, the request body is encrypted using AES in Cipher 
 ## Prerequisites
 
 Ensure that you have the Apache Commons Codec and Ivy library installed in your JMeter setup. You can download it from [Codec Plugin](https://commons.apache.org/proper/commons-codec/download_codec.cgi) and [Ivy Plugin](https://ant.apache.org/ivy/download.cgi.) Place the downloaded JAR file in the `lib` directory of your JMeter installation or download the [lib folder](./lib) copy and paste the Jar files on your jmeter lib folder.
-# Apache Commons Codec:
+1. Apache Commons Codec:
 
 **Purpose:** This library provides implementations of common encoders and decoders, such as Base64 encoding. In this context, it is used to encode the result of AES encryption into Base64 format.
 
 **Usage:** The Base64 class from Apache Commons Codec is used to perform Base64 encoding of the encrypted bytes.
-## Ivy Library:
+2. Ivy Library:
 
 **Purpose:** Ivy is a dependency manager for Java that helps manage project dependencies (JAR files) in a systematic way. In JMeter, it can be used to manage external libraries, making it easier to include and reference them in your test plan.
 
