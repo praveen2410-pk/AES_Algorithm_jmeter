@@ -53,7 +53,7 @@ Your explanation is clear, but I've made a few adjustments for clarity:
 - `initVector`: Initialization vector used in AES encryption. This process ensures that identical messages do not consistently produce the same ciphertext.
 - `mainKey`: The encryption key. You can either generate it or use a predefined key. Consider this as your secret key.
 
-## Encryption Function
+## Encryption and Decryption Main Function
 ```groovy
 // Encryption Function
 def encryptAES(data, key, initVector) {
