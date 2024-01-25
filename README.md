@@ -1,14 +1,20 @@
 # JMeter Request Body Encryption JSR223 PreProcessor
+AES (Advanced Encryption Standard) functions as a secure encryption algorithm, transforming data or messages into ciphertext. This transformation involves the use of a secret key and an initial value (IV). The process ensures that identical messages don't consistently produce the same ciphertext. Once the ciphertext is generated, it is converted into Base64 encoding with padding.
 
-AES (Advanced Encryption Standard) serves as a secret code machine, encrypting data or messages and transforming them into ciphertext using a secret Key and an initial value (IV). This process ensures that identical messages do not consistently result in the same secret code. After generating the secret code, the value is converted into Base64 encoding with padding.
-
-In the request body, before being sent to servers, the request is encrypted using AES in Cipher Block Chaining (CBC) mode. To handle this encryption in JMeter, use the JSR223 Preprocessor with Groovy.
+## JMeter Test Plan
+Before being sent to servers, the request body is encrypted using AES in Cipher Block Chaining (CBC) mode. To implement this encryption in JMeter, utilize the JSR223 Preprocessor with the Groovy language.
 
 ## Prerequisites
 
-Ensure that you have the Apache Commons Codec and Ivy library installed in your JMeter setup. You can download it from [Codec Plugin](https://commons.apache.org/proper/commons-codec/download_codec.cgi) and [Ivy Plugin](https://ant.apache.org/ivy/download.cgi.) or download the [lib folder](./lib) copy and paste the Jar files on your jmeter lib folder.
+Ensure that you have the Apache Commons Codec and Ivy library installed in your JMeter setup. You can download it from [Codec Plugin](https://commons.apache.org/proper/commons-codec/download_codec.cgi) and [Ivy Plugin](https://ant.apache.org/ivy/download.cgi.) Place the downloaded JAR file in the `lib` directory of your JMeter installation or download the [lib folder](./lib) copy and paste the Jar files on your jmeter lib folder.
+# Apache Commons Codec:
 
-Place the downloaded JAR file in the `lib` directory of your JMeter installation.
+**Purpose:** This library provides implementations of common encoders and decoders, such as Base64 encoding. In this context, it is used to encode the result of AES encryption into Base64 format.
+**Usage:** The Base64 class from Apache Commons Codec is used to perform Base64 encoding of the encrypted bytes.
+## Ivy Library:
+
+**Purpose:** Ivy is a dependency manager for Java that helps manage project dependencies (JAR files) in a systematic way. In JMeter, it can be used to manage external libraries, making it easier to include and reference them in your test plan.
+**Usage:** The Ivy library is used to manage the dependencies of the Groovy script. This is important because the script relies on classes from external libraries (e.g., javax.crypto.Cipher, org.apache.commons.codec.binary.Base64). By using Ivy, you ensure that these dependencies are available to the script during runtime.
 
 ## Usage
 
@@ -38,19 +44,9 @@ The JSR223 PreProcessor file contains the Groovy script for the JSR223 PreProces
 ## Configuration
 
 Adjust the following variables in the script according to your requirements:
+Your explanation is clear, but I've made a few adjustments for clarity:
 
-- `md5`: The MD5 hash is generated from the channel.
-- `initVector`: Initialization vector used in AES encryption.
-- `mainKey`: The encryption key. You can either generate it or use a predefined key.
+- `md5`: The MD5 hash is generated from the channel.  In this case, the key is generated based on header parameter values.
+- `initVector`: Initialization vector used in AES encryption. This process ensures that identical messages do not consistently produce the same ciphertext.
+- `mainKey`: The encryption key. You can either generate it or use a predefined key. Consider this as your secret key.
 
-## Debugging
-
-To enable debugging, uncomment the logging lines in the script:
-
-```groovy
-// Uncomment the following lines for debugging
-// log.info("Original Request Body: " + requestBody)
-// log.info("Main Key: " + mainKey)
-// log.info("Encrypted Body: " + encrypted)
-// log.info("Timestamp: " + time)
-// log.info("Hash: " + hash)
