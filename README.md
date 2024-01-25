@@ -10,10 +10,12 @@ Ensure that you have the Apache Commons Codec and Ivy library installed in your 
 # Apache Commons Codec:
 
 **Purpose:** This library provides implementations of common encoders and decoders, such as Base64 encoding. In this context, it is used to encode the result of AES encryption into Base64 format.
+
 **Usage:** The Base64 class from Apache Commons Codec is used to perform Base64 encoding of the encrypted bytes.
 ## Ivy Library:
 
 **Purpose:** Ivy is a dependency manager for Java that helps manage project dependencies (JAR files) in a systematic way. In JMeter, it can be used to manage external libraries, making it easier to include and reference them in your test plan.
+
 **Usage:** The Ivy library is used to manage the dependencies of the Groovy script. This is important because the script relies on classes from external libraries (e.g., javax.crypto.Cipher, org.apache.commons.codec.binary.Base64). By using Ivy, you ensure that these dependencies are available to the script during runtime.
 
 ## Usage
