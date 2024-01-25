@@ -41,8 +41,6 @@ The JSR223 PreProcessor file contains the Groovy script for the JSR223 PreProces
 - Updates the request body in the sampler's arguments.
 - Sets the checksum in JMeter variables.
 
-**Note:** Uncomment the logging lines for debugging if needed.
-
 ## Configuration
 
 Adjust the following variables in the script according to your requirements:
