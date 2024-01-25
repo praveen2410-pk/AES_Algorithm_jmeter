@@ -29,7 +29,7 @@ Ensure that you have the Apache Commons Codec and Ivy library installed in your 
 3. Set the language to `groovy`.
 
 4. Copy and paste the content of the [JSR223 PreProcessor](./JSR223PreProcessor.groovy)into the script area.
-5. If have to encrypt the [32,16 bytes of Key and IV use this JSR223_PreProcessor](./JSR223_PreProcessor_32_16_bytes.groovy)
+5. To encrypt with length key use this [32,16 bytes of Key and IV use this JSR223_PreProcessor](./JSR223_PreProcessor_32_16_bytes.groovy)
 
 6. Save your test plan.
    
@@ -43,6 +43,7 @@ The JSR223 PreProcessor file contains the Groovy script for the JSR223 PreProces
 - Encrypts the request body using AES.
 - Updates the request body in the sampler's arguments.
 - Sets the checksum in JMeter variables.
+  
 ## Encryption Function
 ```groovy
 def encryptAES(data, key, initVector) {
@@ -60,6 +61,7 @@ def encryptAES(data, key, initVector) {
         return null
     }
 }
+
 ## Decryption Function
 
 ```groovy
@@ -78,7 +80,6 @@ def decryptAES(encryptedData, key, initVector) {
         return null
     }
 }
-'''
 
 ## Configuration
 
