@@ -44,8 +44,18 @@ The JSR223 PreProcessor file contains the Groovy script for the JSR223 PreProces
 - Updates the request body in the sampler's arguments.
 - Sets the checksum in JMeter variables.
   
+## Configuration
+
+Adjust the following variables in the script according to your requirements:
+Your explanation is clear, but I've made a few adjustments for clarity:
+
+- `md5`: The MD5 hash is generated from the channel.In this case, the key is generated based on header parameter values.
+- `initVector`: Initialization vector used in AES encryption. This process ensures that identical messages do not consistently produce the same ciphertext.
+- `mainKey`: The encryption key. You can either generate it or use a predefined key. Consider this as your secret key.
+
 ## Encryption Function
 ```groovy
+// Encryption Function
 def encryptAES(data, key, initVector) {
     try {
         def keyBytes = key.getBytes(StandardCharsets.UTF_8)
@@ -62,9 +72,8 @@ def encryptAES(data, key, initVector) {
     }
 }
 
-## Decryption Function
+// Decryption Function
 
-```groovy
 def decryptAES(encryptedData, key, initVector) {
     try {
         def keyBytes = key.getBytes(StandardCharsets.UTF_8)
@@ -80,13 +89,4 @@ def decryptAES(encryptedData, key, initVector) {
         return null
     }
 }
-
-## Configuration
-
-Adjust the following variables in the script according to your requirements:
-Your explanation is clear, but I've made a few adjustments for clarity:
-
-- `md5`: The MD5 hash is generated from the channel.  In this case, the key is generated based on header parameter values.
-- `initVector`: Initialization vector used in AES encryption. This process ensures that identical messages do not consistently produce the same ciphertext.
-- `mainKey`: The encryption key. You can either generate it or use a predefined key. Consider this as your secret key.
 
