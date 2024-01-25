@@ -20,7 +20,7 @@ Ensure that you have the Apache Commons Codec and Ivy library installed in your 
 
 **Usage:** The Ivy library is used to manage the dependencies of the Groovy script. This is important because the script relies on classes from external libraries (e.g., javax.crypto.Cipher, org.apache.commons.codec.binary.Base64). By using Ivy, you ensure that these dependencies are available to the script during runtime.
 
-## Usage
+## Script Design
 
 1. Open your JMeter test plan.
 
